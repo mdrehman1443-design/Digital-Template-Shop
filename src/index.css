@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-urdu: "Noto Nastaliq Urdu", "DM Sans", serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-urdu);
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] .font-display {
+    font-family: var(--font-urdu);
+    line-height: 1.85;
+  }
+
+  [dir="rtl"] input,
+  [dir="rtl"] textarea,
+  [dir="rtl"] select,
+  [dir="rtl"] button {
+    font-family: var(--font-urdu);
+  }
+
+  [dir="rtl"] .tabular-nums,
+  [dir="rtl"] .font-mono {
+    font-family: var(--font-mono);
+    direction: ltr;
+    unicode-bidi: embed;
+  }
+}
+
+.font-urdu-text {
+  font-family: var(--font-urdu);
+  line-height: 1.9;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Safe area padding for mobile bottom bar */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Dedicated print layout for A4, 80mm, and 58mm thermal printers */
+@media print {
+  @page {
+    margin: 6mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .print-paper-a4 {
+    width: 100% !important;
+    max-width: 210mm !important;
+  }
+
+  .print-paper-80mm {
+    width: 76mm !important;
+    max-width: 76mm !important;
+    margin: 0 auto !important;
+  }
+
+  .print-paper-58mm {
+    width: 54mm !important;
+    max-width: 54mm !important;
+    margin: 0 auto !important;
+  }
+}

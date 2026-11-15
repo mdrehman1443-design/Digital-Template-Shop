@@ -1,0 +1,6 @@
+{
+  "name": "Digital Receipt & Template Hub",
+  "description": "Mobile-first bilingual English and Urdu digital receipt generator, custom shop template builder, and khata/ledger calculator for small businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
